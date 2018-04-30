@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="pos.preorder.box.template" xml:space="preserve">
 
-    <t t-name="SmallBoxWidget">
-        <div class="oe_status js_small_box">
-            <span class='js_count'></span>
-        </div>
-    </t>
-
-    <t t-name="StandardBoxWidget">
-        <div class="oe_status js_standard_box">
-            <span class='js_count'></span>
-        </div>
-    </t>
-
-    <t t-name="LargeBoxWidget">
-        <div class="oe_status js_large_box">
+    <t t-name="BoxWidget">
+        <t t-set="widget_class" t-value="'js_' + widget.size + '_box'"/>
+        <div t-attf-class="oe_status {{ widget_class }}">
             <span class='js_count'></span>
         </div>
     </t>
