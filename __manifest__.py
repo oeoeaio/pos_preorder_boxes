@@ -10,6 +10,7 @@
     'depends': ['pos_preorders'],
     'data': [
         'views/assets.xml',
+        'views/box_settings.xml'
     ],
     'qweb': [
         'static/src/xml/box_widgets.xml',

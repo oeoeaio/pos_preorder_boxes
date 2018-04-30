@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pos_preorder_box_settings_view_form" model="ir.ui.view">
+        <field name="name">pos.preorder.box.settings.view.form</field>
+        <field name="model">pos.preorder.box.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <form string="Box Settings" class="oe_form_configuration o_base_settings">
+                <div class="o_control_panel">
+                    <header>
+                        <button string="Save" type="object" name="execute" class="oe_highlight" />
+                        <button string="Discard" type="object" name="cancel" />
+                    </header>
+                </div>
+                <div class="o_setting_container">
+                    <div class="settings_tab"/>
+                    <div class="settings">
+                        <div class="notFound o_hidden">No Record Found</div>
+                        <div class="app_settings_block" data-string="Box Settings" string="Box Settings" data-key="box_settings" groups="point_of_sale.group_pos_manager">
+                            <h2>Box Settings</h2>
+                            <div class="row mt16 o_settings_container">
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <label for="small_box_product_ids"/>
+                                    <div class="text-muted">
+                                        Products which should be counted as Small Boxes
+                                    </div>
+                                    <field name="small_box_product_ids" widget="many2many_tags"/>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <label for="standard_box_product_ids"/>
+                                    <div class="text-muted">
+                                        Products which should be counted as Standard Boxes
+                                    </div>
+                                    <field name="standard_box_product_ids" widget='many2many_tags'/>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <label for="large_box_product_ids"/>
+                                    <div class="text-muted">
+                                        Products which should be counted as Large Boxes
+                                    </div>
+                                    <field name="large_box_product_ids" widget='many2many_tags'/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pos_preorder_box_settings" model="ir.actions.act_window">
+        <field name="name">Box Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.preorder.box.settings</field>
+        <field name="view_id" ref="pos_preorder_box_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'box_settings'}</field>
+    </record>
+
+    <menuitem id="menu_pos_preorder_box_settings"
+        name="Box Settings"
+        parent="point_of_sale.menu_point_config_product"
+        sequence="3"
+        action="action_pos_preorder_box_settings"
+        groups="point_of_sale.group_pos_manager"/>
+
+</odoo>
