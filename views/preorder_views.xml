@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pos_preorder_tree_inherit" model="ir.ui.view">
+        <field name="name">pos.preorder.tree.inherit</field>
+        <field name="model">pos.preorder</field>
+        <field name="inherit_id" ref="pos_preorders.view_pos_preorder_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pack_day']" position="after">
+                <field name="box_size"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="preorders.boxes.template" xml:space="preserve">
+
+    <t t-extend="PreorderLine">
+        <t t-jquery="td.customer" t-operation="after">
+            <td class='box_size'><t t-esc='preorder.box_size' /></td>
+        </t>
+    </t>
+
+    <t t-extend="PreorderListScreenWidget">
+        <t t-jquery="th.customer" t-operation="after">
+            <th class='box_size'>Box Size</th>
+        </t>
+    </t>
+</templates>
