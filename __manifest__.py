@@ -12,6 +12,7 @@
         'views/assets.xml',
         'views/box_settings.xml',
         'views/preorder_views.xml',
+        'wizard/box_summary.xml',
     ],
     'qweb': [
         'static/src/xml/box_widgets.xml',

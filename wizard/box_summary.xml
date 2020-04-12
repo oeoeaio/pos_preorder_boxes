@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="preordered_box_summary">
+        <field name="name">preordered_box_summary</field>
+        <field name="model">pos.preordered_box.summary</field>
+        <field name="arch" type="xml">
+            <form string="Summary">
+                <sheet>
+                    <field name="counts" readonly="1" nolabel="1">
+                        <tree>
+                            <field name="size"/>
+                            <field name="uncollected_count"/>
+                            <field name="to_deliver_count"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button special="cancel" string="Ok" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        name="Box Summary"
+        res_model="pos.preordered_box.summary"
+        src_model="pos.preorder"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"
+        id="action_preordered_box_summary"/>
+</odoo>
