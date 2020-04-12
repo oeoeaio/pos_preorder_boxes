@@ -11,6 +11,8 @@ for (var i=0;i < model_list.length;i++){
         model_list[i].fields.push('small_count');
         model_list[i].fields.push('standard_count');
         model_list[i].fields.push('large_count');
+        model_list[i].fields.push('fruit_count');
+        model_list[i].fields.push('large_fruit_count');
     }
 }
 

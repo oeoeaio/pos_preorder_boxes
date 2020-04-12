@@ -7,3 +7,9 @@
 .pos .pos-topheader .pos-rightheader .js_large_box .js_count {
     color: #4a86e8;
 }
+.pos .pos-topheader .pos-rightheader .js_fruit_box .js_count {
+    color: #8b4ae8;
+}
+.pos .pos-topheader .pos-rightheader .js_large_fruit_box .js_count {
+    color: #e84acf;
+}

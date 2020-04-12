@@ -57,7 +57,31 @@ var LargeBoxWidget = BoxWidget.extend({
         this.size = "large";
     },
 });
+var FruitBoxWidget = BoxWidget.extend({
+    template: 'BoxWidget',
+    init: function(parent, options) {
+        this._super(parent, options);
+        this.size = "fruit";
+    },
+});
+var LargeFruitBoxWidget = BoxWidget.extend({
+    template: 'BoxWidget',
+    init: function(parent, options) {
+        this._super(parent, options);
+        this.size = "large_fruit";
+    },
+});
 
+chrome.Chrome.prototype.widgets.unshift({
+    'name':   'large-fruit-box',
+    'widget': LargeFruitBoxWidget,
+    'append':  '.pos-rightheader',
+});
+chrome.Chrome.prototype.widgets.unshift({
+    'name':   'fruit-box',
+    'widget': FruitBoxWidget,
+    'append':  '.pos-rightheader',
+});
 chrome.Chrome.prototype.widgets.unshift({
     'name':   'large-box',
     'widget': LargeBoxWidget,

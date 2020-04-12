@@ -41,6 +41,20 @@
                                     </div>
                                     <field name="large_box_product_ids" widget='many2many_tags'/>
                                 </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <label for="fruit_box_product_ids"/>
+                                    <div class="text-muted">
+                                        Products which should be counted as Fruit Boxes
+                                    </div>
+                                    <field name="fruit_box_product_ids" widget='many2many_tags'/>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <label for="large_fruit_box_product_ids"/>
+                                    <div class="text-muted">
+                                        Products which should be counted as Large Fruit Boxes
+                                    </div>
+                                    <field name="large_fruit_box_product_ids" widget='many2many_tags'/>
+                                </div>
                             </div>
                         </div>
                     </div>

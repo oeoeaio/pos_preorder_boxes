@@ -11,6 +11,8 @@ class PosPreorder(models.Model):
         'small': "Small Box",
         'standard': "Standard Box",
         'large': "Large Box",
+        'fruit': "Fruit Box",
+        'large_fruit': "Large Fruit Box",
     }
 
     @api.depends('lines.product_id', 'lines.qty')
@@ -22,7 +24,9 @@ class PosPreorder(models.Model):
             counter = {
                 'small': 0,
                 'standard': 0,
-                'large': 0
+                'large': 0,
+                'fruit': 0,
+                'large_fruit': 0
             }
             for line in preorder.lines:
                 for size, ids in box_ids.items():
@@ -33,11 +37,15 @@ class PosPreorder(models.Model):
             preorder.small_count = counter['small']
             preorder.standard_count = counter['standard']
             preorder.large_count = counter['large']
+            preorder.fruit_count = counter['fruit']
+            preorder.large_fruit_count = counter['large_fruit']
             preorder.box_size = self._compute_size_text(counter)
 
     small_count = fields.Integer(compute=_compute_box_size, string="Small Box Count", store=True)
     standard_count = fields.Integer(compute=_compute_box_size, string="Standard Box Count", store=True)
     large_count = fields.Integer(compute=_compute_box_size, string="Large Box Count", store=True)
+    fruit_count = fields.Integer(compute=_compute_box_size, string="Fruit Box Count", store=True)
+    large_fruit_count = fields.Integer(compute=_compute_box_size, string="Large Fruit Box Count", store=True)
     box_size = fields.Char(compute=_compute_box_size, string='Box Size', store=True)
 
     def box_ids(self):
@@ -46,9 +54,13 @@ class PosPreorder(models.Model):
         small_ids = ICPSudo.get_param('pos.preorder.box.small_box_product_ids')
         standard_ids = ICPSudo.get_param('pos.preorder.box.standard_box_product_ids')
         large_ids = ICPSudo.get_param('pos.preorder.box.large_box_product_ids')
+        fruit_ids = ICPSudo.get_param('pos.preorder.box.fruit_box_product_ids')
+        large_fruit_ids = ICPSudo.get_param('pos.preorder.box.large_fruit_box_product_ids')
         box_ids['small'] = list(map(int,small_ids.split(','))) if small_ids else []
         box_ids['standard'] = list(map(int,standard_ids.split(','))) if standard_ids else []
         box_ids['large'] = list(map(int,large_ids.split(','))) if large_ids else []
+        box_ids['fruit'] = list(map(int,fruit_ids.split(','))) if fruit_ids else []
+        box_ids['large_fruit'] = list(map(int,large_fruit_ids.split(','))) if large_fruit_ids else []
         return box_ids
 
     def _compute_size_text(self, counter):
