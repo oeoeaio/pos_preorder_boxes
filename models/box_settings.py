@@ -35,7 +35,6 @@ class BoxSettings(models.TransientModel):
             'large_fruit_box_product_ids': tuple(map(int,large_fruit_ids.split(','))),
         }
 
-    @api.multi
     def set_values(self):
         # super(BoxSettings, self).set_values()
         ICPSudo = self.env['ir.config_parameter'].sudo()
