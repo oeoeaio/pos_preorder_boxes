@@ -24,7 +24,7 @@
     <act_window
         name="Box Summary"
         res_model="pos.preordered_box.summary"
-        src_model="pos.preorder"
+        binding_model="pos.preorder"
         view_mode="form"
         target="new"
         id="action_preordered_box_summary"/>
