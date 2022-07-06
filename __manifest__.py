@@ -9,15 +9,19 @@
     'description': "",
     'depends': ['pos_preorders'],
     'data': [
-        'views/assets.xml',
         'views/box_settings.xml',
         'views/preorder_views.xml',
         'wizard/box_summary.xml',
     ],
-    'qweb': [
-        'static/src/xml/box_widgets.xml',
-        'static/src/xml/preorder_templates.xml',
-    ],
+    'assets': {
+        'point_of_sale.assets': [
+            'pos_preorder_boxes/static/src/js/**/*',
+            ('after', 'point_of_sale/static/src/css/pos.css', 'pos_preorder_boxes/static/src/css/box_widgets.css'),
+        ],
+        'web.assets_qweb': [
+            'pos_preorder_boxes/static/src/xml/**/*',
+        ],
+    },
     'images': [],
     'installable': True,
     'application': False,
