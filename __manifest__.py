@@ -12,6 +12,7 @@
         'views/box_settings.xml',
         'views/preorder_views.xml',
         'wizard/box_summary.xml',
+        'security/ir.model.access.csv',
     ],
     'assets': {
         'point_of_sale.assets': [
