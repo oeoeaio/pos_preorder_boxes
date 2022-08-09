@@ -1,4 +1,4 @@
-odoo.define('pos.preorders.add_boxes', ['point_of_sale.models', 'pos.preorders'], function (require) {
+odoo.define('point_of_sale.add_boxes', ['point_of_sale.models', 'pos.preorders'], function (require) {
 
 var models = require('point_of_sale.models');
 

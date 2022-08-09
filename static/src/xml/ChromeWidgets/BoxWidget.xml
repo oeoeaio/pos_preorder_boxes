@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="BoxWidget" owl="1">
+        <t t-set="widget_class" t-value="'js_' + props.size + '_box'"/>
+        <div t-attf-class="oe_status {{ widget_class }}" t-on-click="updateCount">
+            <span class='js_count'>
+                <t t-esc="state.count" />
+            </span>
+        </div>
+    </t>
+</templates>

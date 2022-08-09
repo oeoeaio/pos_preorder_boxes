@@ -1,15 +1,20 @@
 .pos .pos-topheader .pos-rightheader .js_small_box .js_count {
     color: #ff9900;
+    font-size: 1rem;
 }
 .pos .pos-topheader .pos-rightheader .js_standard_box .js_count {
     color: #38cd13;
+    font-size: 1rem;
 }
 .pos .pos-topheader .pos-rightheader .js_large_box .js_count {
-    color: #4a86e8;
+    color: #5eabf2;
+    font-size: 1rem;
 }
 .pos .pos-topheader .pos-rightheader .js_fruit_box .js_count {
-    color: #8b4ae8;
+    color: #b080ff;
+    font-size: 1rem;
 }
 .pos .pos-topheader .pos-rightheader .js_large_fruit_box .js_count {
     color: #e84acf;
+    font-size: 1rem;
 }
